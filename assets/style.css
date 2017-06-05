@@ -1,0 +1,51 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	text-align: center;
+}
+
+#musicButtons {
+	text-align: center;
+	margin: 20px;
+	margin-bottom: 20px;
+}
+
+button {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+form {
+	margin-top: 10px;
+}
+
+.gifDiv {
+	float: left;
+	margin: 10px;
+	text-align: center;
+}
+
+#addMusician {
+	text-align: center;
+	margin: 20px;
+	margin-bottom: 20px;
+}
+
+#containGifs {
+	border: solid 3px #286090;
+	width: 100%;
+	height: 390px;
+}
+
+.container {
+	background-color: white;
+
+
+}
+
+body {
+	background-color: ;
+}
