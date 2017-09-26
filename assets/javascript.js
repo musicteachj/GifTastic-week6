@@ -1,25 +1,32 @@
 $( document ).ready(function() {
-//  var topics
+//  Array of Musicians
 	var musicians = ["Jimi Hendrix", "Eric Clapton", "Stevie Ray Vaughan", "Jack White", "John Lennon"];
 
+// Function that will display when button is clicked
 function displayGifButtons(){
+    // Grabs the #musicButtons and empties them out
     $("#musicButtons").empty(); 
+    // Loop through the musicians array
     for (var i = 0; i < musicians.length; i++){
         var gifButton = $("<button>");
+        // Add classes to the button
         gifButton.addClass("action");
         gifButton.addClass("btn btn-primary")
         gifButton.attr("data-name", musicians[i]);
         gifButton.text(musicians[i]);
+        // Adds the new button to the #musicButtons
         $("#musicButtons").append(gifButton);
     }
 }
 
+// Add new button to the new giff
 function addNewButton(){
     $("#addMusician").on("click", function(){
     var action = $("#music-input").val().trim();
     if (action == ""){
       return false; // added so user cannot add a blank button
     }
+    // Pushes the new musician, add action class
     musicians.push(action);
 
     displayGifButtons();
@@ -27,6 +34,7 @@ function addNewButton(){
     });
 }
 
+// Remove button function
 function removeLastButton(){
     $("removemusician").on("click", function(){
     musicians.pop(action);
@@ -37,6 +45,7 @@ function removeLastButton(){
 
 function displayGifs(){
     var action = $(this).attr("data-name");
+    // Giphy API Key
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + action + "&api_key=dc6zaTOxFJmzC&limit=10";
     console.log(queryURL); // displays the constructed url
     $.ajax({
